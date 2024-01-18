@@ -1,16 +1,174 @@
 @import "./lib/bootstrap/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Caveat&family=Merriweather:wght@300&family=Playfair+Display&family=Poppins:wght@100;300&family=Ranchers&display=swap');
 
-.nav-item
+:root
 {
-    font-size: 2em;
+    --violet : #686bae;
+    --yellow : #f1eda3;
+    --pink : #e5d2e0;
+    --blue : #05a9c7;
+    --noir : #000;
 }
 
-.nav-link, .navbar-brand
+body
 {
-    color: aqua;
+    background-color: var(--noir);
+    font-family: 'Ranchers', sans-serif;
+}
+
+h1
+{
+    color: var(--yellow);
+}
+
+/*Nav*/
+nav
+{
+    height: 15em;
+    background: url(./img/banner.jpg)center no-repeat;
+}
+
+.nav-link
+{
+    color: var(--blue);
+    font-size: 4em;
+}
+
+.nav-link:hover
+{
+    color: var(--violet);
+}
+
+.navbar-brand
+{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--yellow);
+}
+
+.navbar-brand:hover
+{
+    color: lightsalmon;
 }
 
 .active
 {
     color: red;
 }
+/*END Nav*/
+
+.home
+{
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)) url(../img/backGroundHome.jpg) center center fixed no-repeat;
+    background-size: cover;
+    height: 1200px;
+}
+
+/*Snake*/
+canvas
+{
+    border: 4px solid #686bae;
+}
+/*Snake END*/
+
+/*Flying Ducky*/
+.duck-1
+{
+    height: 5em;
+    width: 5em;
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+}
+
+.background
+{
+    height: 100vh;
+    width: 100vw;
+    background: url(../img/backGroungDucky.png) no-repeat center center fixed;
+    -webkit-background-size : cover;
+    -moz-background-size : cover;
+    -o-background-size :cover;
+    background-size: cover;
+}
+
+.pip_sprite
+{
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background: radial-gradient(lightgreen 50%, green);
+    border: 5px solid black;
+}
+
+.message
+{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+.messageStyle
+{
+    background: white;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5%;
+}
+
+.score
+{
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 10vh;
+    font: 100;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+.scoreValue
+{
+    color: var(--yellow);
+    font-weight: bold;
+}
+
+@media only screen and (max-width : 1080px)
+{
+    .message
+    {
+        font-size: 50px;
+        top: 50%;
+        white-space: nowrap;
+    }
+
+    .score
+    {
+        font-size: 8vh;
+    }
+
+    .duck
+    {
+        width: 120px;
+        height: 90px;
+    }
+
+    .pip_sprite
+    {
+        width: 14vw;
+    }
+}
+/*Flying Ducky END*/
+
+
