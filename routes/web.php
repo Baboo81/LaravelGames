@@ -13,8 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);//Route écoute la home page
+//Route::get('articles', [\App\Http\Controllers\PostController::class, 'index']);//Route écoute la home page
 
-Route::get('snake', [\App\Http\Controllers\PostController::class, 'snakeGame']);
+//Route::get('snake', [\App\Http\Controllers\PostController::class, 'snakeGame']);
 
+//Route::get('/', function() {
+//    return view('welcome');
+//});
 
+Route::get('/', function() {
+    return view('home.home');
+})->name('app_home');
+
+Route::get('/about', function() {
+    return view('home.about');
+})->name('app_about');
