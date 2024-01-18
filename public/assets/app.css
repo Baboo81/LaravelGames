@@ -1,1 +1,16 @@
 @import "./lib/bootstrap/css/bootstrap.css";
+
+.nav-item
+{
+    font-size: 2em;
+}
+
+.nav-link, .navbar-brand
+{
+    color: aqua;
+}
+
+.active
+{
+    color: red;
+}
