@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,8 +23,19 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
-Route::get('/', [HomeController::class, 'home'])->name('app_home');
+Route::get('/', [HomeController::class, 'home'])
+    ->name('app_home');
 
-Route::get('/about', [HomeController::class, 'about'])->name('app_about');
+Route::get('/about', [HomeController::class, 'about'])
+    ->name('app_about');
 
-Route::match(['get', 'post'], '/dashboard', [HomeController::class, 'dashboard'])->name('app_dashboard');
+//match permet de combiner les méthodes get et post afin de recevoir et d'envoyer des données:
+Route::match(['get', 'post'], '/dashboard', [HomeController::class, 'dashboard'])
+    ->name('app_dashboard');
+
+//Grâce à fortify ns pouvons mettre en commentaire ces 2 routes, cette lib va gérer les logins et les authentifiactions
+/*Route::match(['get', 'post'], '/login',[LoginController::class, 'login'])
+    ->name('app_login');
+
+Route::match(['get', 'post'], '/register', [LoginController::class, 'register'])
+    ->name('app_register');*/
