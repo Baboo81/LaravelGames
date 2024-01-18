@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\PostController::class, 'index']);//Route écoute la home page
 
 Route::get('snake', [\App\Http\Controllers\PostController::class, 'snakeGame']);
+
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;//Permet de communiquer avec une DB
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,6 +25,7 @@ class PostController extends Controller
     
         return view('home', [
             'articles' => $articles
+            //'articles' => Post::all() pour recupérer les articles de la DB, cela permet au Model Post d'aller récup les donnnées de la DB
         ]);
     }
 
