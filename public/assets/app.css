@@ -28,10 +28,10 @@ nav
     background: url(./img/banner.jpg)center no-repeat;
 }
 
-.nav-link
+.nav-link, .nav-item
 {
     color: var(--blue);
-    font-size: 4em;
+    font-size: 1.5em;
 }
 
 .nav-link:hover
@@ -49,11 +49,6 @@ nav
 .navbar-brand:hover
 {
     color: lightsalmon;
-}
-
-.active
-{
-    color: red;
 }
 /*END Nav*/
 

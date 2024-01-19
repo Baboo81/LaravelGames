@@ -3,5 +3,5 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <h1>Dashboard</h1>
+    <h1 class="text-center py-5">Dashboard</h1>
 @endsection
