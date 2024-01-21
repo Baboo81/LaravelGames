@@ -21,6 +21,23 @@ h1
     color: var(--yellow);
 }
 
+p
+{
+    color: var(--violet);
+    font-size: 1.5em;
+}
+
+label
+{
+    color: var(--blue);
+    font-size: 1.5em;
+}
+
+.border
+{
+    padding: 3%;
+}
+
 /*Nav*/
 nav
 {
