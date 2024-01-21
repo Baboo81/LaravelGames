@@ -4,4 +4,7 @@
 
 @section('content')
     <h1 class="text-center py-5">Home</h1>
+    <section class="home">
+
+    </section>
 @endsection
