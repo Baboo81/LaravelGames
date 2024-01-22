@@ -13,7 +13,7 @@
 
 body
 {
-    background-color: var(--blueOcean);
+    background-color: var(--violet);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -24,7 +24,7 @@ h1
 
 p
 {
-    color: var(--violet);
+    color: var(--yellow);
     font-size: 1.5em;
 }
 

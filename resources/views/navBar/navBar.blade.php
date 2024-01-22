@@ -17,12 +17,23 @@
                             <a class="nav-link mx-5 @if(Request::route()->getName() == 'app_dashboard') acitve @endif" href="{{ route('app_dashboard') }}">Dashboard</a>
                         </li>
                         <!--Routes gérées par Fortify-->
-                        <li class="nav-item">
-                            <a class="nav-link mx-5" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-5" href="{{ route('register') }}">Register</a>
-                        </li>
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link mx-5" href="{{ route('login') }}">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-5" href="{{ route('register') }}">Register</a>
+                            </li>
+                        @endguest
+
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link mx-5" href="{{ route('app_logout') }}">Logout</a>
+                            </li>
+                            <button type="button" class="btn btn-light">
+                                {{ Auth::user()->name }}
+                            </button>
+                        @endauth
                 </ul>
             </div>
         </div>

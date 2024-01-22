@@ -30,6 +30,7 @@ Route::get('/about', [HomeController::class, 'about'])
     ->name('app_about');
 
 //match permet de combiner les méthodes get et post afin de recevoir et d'envoyer des données:
+//L'utilisateur sera redirigé vers la page dashboard une fois l'authentification réussie:
 Route::match(['get', 'post'], '/dashboard', [HomeController::class, 'dashboard'])
     ->name('app_dashboard');
 
@@ -39,3 +40,6 @@ Route::match(['get', 'post'], '/dashboard', [HomeController::class, 'dashboard']
 
 Route::match(['get', 'post'], '/register', [LoginController::class, 'register'])
     ->name('app_register');*/
+
+Route::get('/logout', [LoginController::class, 'logout'])
+    ->name('app_logout');

@@ -44,7 +44,9 @@ $('#registerUser').click(function(){
                             $('#errorRegisterAgreeTerms').text("");
 
                             //Envoie du form:
-                            alert("data sended !");
+                            //alert("data sended !");
+
+                            $('#form-register').submit();
                         } else {
                             $('#agreeTerms').addClass('is-invalid');
                             $('#errorRegisterAgreeTerms').text("You should be agree to our terms and conditions !");

@@ -9,7 +9,7 @@
                 <h1 class="text-center py-5">Register</h1>
                 <p class="text-center">Create an account</p>
 
-                <form method="POST" class="row g-3" action="{{ route('register') }}">
+                <form method="POST" class="row g-3" action="{{ route('register') }}" id="form-register">
                     @csrf <!--Token csrf; pour protéger le formulaire-->
 
                     <div class="col-md-6">
