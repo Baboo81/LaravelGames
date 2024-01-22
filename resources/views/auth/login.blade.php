@@ -26,7 +26,7 @@
                         </div>
                     @enderror
 
-                    <label for="email" class="py-3">Email</label>
+                    <label for="email" class="pb-3">Email</label>
                     <input type="email"
                            name="email"
                            id="inputEmail"
@@ -45,7 +45,23 @@
                            autocomplete="current-password">
 
                     <div class="row">
-
+                        <div class="col-md-6">
+                            <div class="form-check form-switch py-3">
+                                <label for="form-check-label" for="toggle">Remember me</label>
+                                <input class="form-check-input"
+                                       name="toggle"
+                                       type="checkbox"
+                                       role="switch"
+                                       {{ old('remember') ? 'checked' : '' }}
+                                       id="toggle">
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-end py-3">
+                            <a href="#">Forgot password ?</a>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 py-3">
+                        <button class="btn btn-primary" type="submit">sign in</button>
                     </div>
                 </form>
             </div>
