@@ -6,13 +6,14 @@
     --violet : #686bae;
     --yellow : #f1eda3;
     --pink : #e5d2e0;
+    --blueOcean : #8ef5ec;
     --blue : #05a9c7;
     --noir : #000;
 }
 
 body
 {
-    background-color: var(--noir);
+    background-color: var(--blueOcean);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -42,7 +43,7 @@ label
 nav
 {
     height: 15em;
-    background: url(./img/banner.jpg)center no-repeat;
+    background: url(../img/banner.jpg)center no-repeat;
 }
 
 .nav-link, .nav-item
