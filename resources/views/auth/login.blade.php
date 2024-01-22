@@ -30,7 +30,7 @@
                     <input type="email"
                            name="email"
                            id="inputEmail"
-                           class="form-control"
+                           class="form-control @error('email') is-invalid  @enderror"
                            value="{{ old('email') }}"
                            required
                            autocomplete="email"
@@ -40,7 +40,7 @@
                     <input type="password"
                            name="password"
                            id="password"
-                           class="form-control"
+                           class="form-control @error('password') is-invalid  @enderror"
                            required
                            autocomplete="current-password">
 
@@ -62,6 +62,9 @@
                     </div>
                     <div class="d-grid gap-2 py-3">
                         <button class="btn btn-primary" type="submit">sign in</button>
+                    </div>
+                    <div>
+                        <p class="text-center">No registered yet ? <a href="{{ route('register') }}">Create an account</a></p>
                     </div>
                 </form>
             </div>
