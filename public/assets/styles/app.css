@@ -8,12 +8,13 @@
     --pink : #e5d2e0;
     --blueOcean : #8ef5ec;
     --blue : #05a9c7;
+    --grey : #647295;
     --noir : #000;
 }
 
 body
 {
-    background-color: var(--violet);
+    background-color: var(--grey);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -61,6 +62,7 @@ nav
 {
     height: 15em;
     background: url(../img/banner.jpg)center no-repeat;
+    background-size: cover;
 }
 
 .nav-link, .nav-item
@@ -97,7 +99,7 @@ nav
 /*Snake*/
 canvas
 {
-    border: 4px solid #686bae;
+    border: 4px solid white;
 }
 /*Snake END*/
 

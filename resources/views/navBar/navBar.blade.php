@@ -11,6 +11,9 @@
                             <a class="nav-link mx-5 @if(Request::route()->getName() == 'app_home') acitve @endif" aria-current href="{{ route('app_home') }}">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link mx-5 @if(Request::route()->getName() == 'app_snake') acitve @endif" aria-current href="{{ route('app_snake') }}">Snake</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link mx-5 @if(Request::route()->getName() == 'app_about') acitve @endif" href="{{ route('app_about') }}">About</a>
                         </li>
                         <li class="nav-item">
