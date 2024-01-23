@@ -45,7 +45,9 @@
                                value="{{ old('email') }}"
                                required
                                autocomplete="email"
-                               autofocus>
+                               autofocus
+                               url_emailExist="{{ route('app_exist_email') }}"
+                               token="{{ csrf_token() }}">
                                <small class="text-danger fw-bold" id="errorRegisterEmail"></small>
                     </div>
                     <div class="col-6">

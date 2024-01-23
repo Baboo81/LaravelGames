@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    protected $request;
+
+    function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
+
     public function logout()
     {
         Auth::logout();
@@ -16,13 +23,19 @@ class LoginController extends Controller
 
     public function existEmail()
     {
-        $email = null;
+        $email = $this->request->input('');
 
         $user = User::where('email', $email)
                 ->first();
 
 
         $response = "";
-        ($user) ? $response = "exist" : $response = "not_exist"
+
+        ($user) ? $response = "exist" : $response = "not_exist";
+
+        return response()->json([
+            'code' => 200,
+            'response' => $response
+        ]);
     }
 }

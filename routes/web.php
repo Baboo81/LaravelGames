@@ -44,3 +44,7 @@ Route::match(['get', 'post'], '/register', [LoginController::class, 'register'])
 
 Route::get('/logout', [LoginController::class, 'logout'])
     ->name('app_logout');
+
+//Nous utilisons la méthode POST car nous envoyons des données uniquement:
+Route::post('/exist_email', [LoginController::class, 'existEmail'])
+    ->name('app_exist_email');

@@ -46,7 +46,13 @@ $('#registerUser').click(function(){
                             //Envoie du form:
                             //alert("data sended !");
 
-                            $('#form-register').submit();
+                            const res = emailExistJS (email);
+
+                            (res !="exist") ? $('#form-register').submit() : $('#email').addClass('is-invalid');
+                                 $('#email').removeClass('is-valid');
+                                 $('#errorRegisterEmail').text("This adress email is already used !");
+
+
                         } else {
                             $('#agreeTerms').addClass('is-invalid');
                             $('#errorRegisterAgreeTerms').text("You should be agree to our terms and conditions !");
@@ -90,3 +96,30 @@ $('#agreeterms').change(function(){
         $('#errorRegisterAgreeTerms').text("You should be agree to our terms and conditions !");
     }
 });
+
+
+function emailExistJS (email)
+{
+    //Je récupère l'url se trouvant dans le fichier web.php via l'id email qui contient le chemin, (id email du fichier register.blade.php):
+    const url = $('#email').attr('url_emailExist');
+    const token = $('#email').attr('token');
+    const res = "";
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: {
+            '_token': token,
+            email: email,
+        },
+        success:function(result) {
+            res = result.response;
+        },
+        async: false
+    });
+
+    return res;
+
+}
+
+
