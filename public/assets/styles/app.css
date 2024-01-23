@@ -14,7 +14,7 @@
 
 body
 {
-    background-color: var(--grey);
+    background-color: var(--blue);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -101,6 +101,11 @@ canvas
 {
    background: url(../img/backGroundSnake.svg);
 }
+.snake
+{
+    background: url(../img/snake.svg);
+}
+
 /*Snake END*/
 
 /*Flying Ducky*/

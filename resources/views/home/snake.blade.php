@@ -11,6 +11,9 @@
             <h2 class="text-center py-5">Snake</h2>
             <canvas width="400" height="400"></canvas>
         </div>
+        <div class="col-md-6 snake">
+
+        </div>
     </div>
 </div>
 @endsection
