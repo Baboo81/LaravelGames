@@ -30,9 +30,11 @@
                             <li class="nav-item">
                                 <a class="nav-link mx-5" href="{{ route('app_logout') }}">Logout</a>
                             </li>
-                            <button type="button" class="btn btn-light">
-                                {{ Auth::user()->name }}
-                            </button>
+                            <span class="text-center">
+                                <div class="user">
+                                    {{ Auth::user()->name }}
+                                </div>
+                            </span>
                         @endauth
                 </ul>
             </div>

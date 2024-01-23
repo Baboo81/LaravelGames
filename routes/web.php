@@ -32,6 +32,7 @@ Route::get('/about', [HomeController::class, 'about'])
 //match permet de combiner les méthodes get et post afin de recevoir et d'envoyer des données:
 //L'utilisateur sera redirigé vers la page dashboard une fois l'authentification réussie:
 Route::match(['get', 'post'], '/dashboard', [HomeController::class, 'dashboard'])
+    ->middleware('auth')//la page dashboard sera accessible pour les personnes authentifiées
     ->name('app_dashboard');
 
 //Grâce à fortify ns pouvons mettre en commentaire ces 2 routes, cette lib va gérer les logins et les authentifiactions

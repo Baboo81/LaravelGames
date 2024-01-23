@@ -34,6 +34,23 @@ label
     font-size: 1.5em;
 }
 
+/*Section user*/
+span
+{
+    height: 110px;
+    width: 110px;
+    background-color: var(--yellow);
+    color: var(--violet);
+    border-radius: 50%;
+
+}
+
+.user
+{
+    font-size: 1.5em;
+    margin-top: 10%;
+}
+/*Section user END*/
 .border
 {
     padding: 5%;
