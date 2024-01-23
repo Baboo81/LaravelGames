@@ -14,7 +14,7 @@
 
 body
 {
-    background-color: var(--blue);
+    background-color: var(--noir);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -100,7 +100,9 @@ nav
 canvas
 {
    background: url(../img/backGroundSnake.svg);
+   margin-left: 60%;
 }
+
 .snake
 {
     background: url(../img/snake.svg);
