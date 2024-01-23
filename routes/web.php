@@ -29,6 +29,9 @@ Route::get('/', [HomeController::class, 'home'])
 Route::get('/snake', [HomeController::class, 'snakeGame'])
     ->name('app_snake');
 
+Route::get('/flyingDuky', [HomeController::class, 'dukyGame'])
+    ->name('app_duky');
+
 Route::get('/about', [HomeController::class, 'about'])
     ->name('app_about');
 

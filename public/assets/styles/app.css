@@ -99,7 +99,7 @@ nav
 /*Snake*/
 canvas
 {
-    border: 4px solid white;
+    border: 4px solid var(--blue);
 }
 /*Snake END*/
 

@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home.snake');
     }
+
+    public function dukyGame()
+    {
+        return view('home.flyingDuky');
+    }
 }
