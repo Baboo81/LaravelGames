@@ -10,7 +10,7 @@
             <canvas width="400" height="400"></canvas>
         </div>
         <div class="col-md-6 snake">
-
+            <img src="/games/public/assets/img/logoGames.svg" alt="logo">
         </div>
     </div>
 </div>

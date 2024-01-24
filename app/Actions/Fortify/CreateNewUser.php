@@ -31,12 +31,28 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();*/
 
+        $email = $input['email'];
+
+        //Génération d'un token pour l'activation du compte:
+        //Création d'une clé unique hachée en md5 afin que chaque utilisateur possède un token unique
+        $activation_token = md5(uniqid())  . $input['email'] . sha1($email);
+
+        $activation_code = "";
+        $length_code = 6;//Pour un code à 6 chiffres
+
+        for($i = 0; $i < $length_code; $i++)
+        {
+            $activation_code .= mt_rand(0,9);//mt_rand, génère un nb aléatoire
+        }
+
         $name = $input['firstname'] . ' ' . $input['lastname'];
 
         return User::create([
             'name' => $name,
-            'email' => $input['email'],
+            'email' => $email,
             'password' => Hash::make($input['password']),
+            'activation_code' => $activation_code, //la classe activation_code va recevoir la $activation_code
+            'activation_token' => $activation_token,
         ]);
     }
 }
