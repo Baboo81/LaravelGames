@@ -16,7 +16,20 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    /**
+     * Construction du service email:
+     * Je récupère les varianles d'environnement en rapport avec;
+     * le port,
+     * l'host,
+     * le user,
+     * Ce sont des variables globales qui accessibles n'importe où ds l'app.
+     */
+    'name' => env('APP_NAME', ''),
+    'mail_host' => env('MAIL_HOST', ''),
+    'mail_port' => env('MAIL_PORT', ''),
+    'mail_user' => env('MAIL_USERNAME', ''),
+    'mail_password' => env('MAIL_PASSWORD', ''),
+
 
     /*
     |--------------------------------------------------------------------------
