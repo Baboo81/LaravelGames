@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use App\Services\EmailService;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -46,6 +47,14 @@ class CreateNewUser implements CreatesNewUsers
         }
 
         $name = $input['firstname'] . ' ' . $input['lastname'];
+
+        //Instanciation de la class ServiceEmail:
+        $emailSend = new EmailService;
+        $subject = "Acivate your account";
+        $message = "Hi " . $name . "Please activate your account ! Copy and past your activation code !" . $activation_code . "Or click to the link bellow to activate your account, link : " . $activation_token;
+
+        $emailSend->sendEmail($subject, $email, $name, false, $message);
+
 
         return User::create([
             'name' => $name,

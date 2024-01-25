@@ -48,10 +48,13 @@ $('#registerUser').click(function(){
 
                             const res = emailExistJS (email);
 
-                            (res !="exist") ? $('#form-register').submit() : $('#email').addClass('is-invalid');
-                                 $('#email').removeClass('is-valid');
-                                 $('#errorRegisterEmail').text("This adress email is already used !");
-
+                            if(res != "exist") {
+                                $('#form-register').submit();
+                            } else {
+                                $('#email').addClass('is-invalid');
+                                $('#email').removeClass('is-valid');
+                                $('#errorRegisterEmail').text("This adress email is already used !");
+                            }
 
                         } else {
                             $('#agreeTerms').addClass('is-invalid');
