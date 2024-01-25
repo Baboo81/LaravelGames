@@ -38,4 +38,27 @@ class LoginController extends Controller
             'response' => $response
         ]);
     }
+
+    public function userChecker ()
+    {
+        /**
+         * Vérifier si l'utilisateur a déjà acitvé son compte ou pas
+         * avant d'être authentifié
+         */
+        $activation_token = Auth::user()->activation_token;
+        $is_verified = Auth::user()->is_verified;
+
+        if($is_verified != 1)
+        {
+            return redirect()->route('app_activation_code', ['token' => $activation_token])
+                            ->with('warning', 'Your account is not activate yet, please check your mailbox and actiavte your account or resend the confirmation message !');
+        } else {
+            return redirect()->route('app_dashboard');
+        }
+    }
+
+    public function activationCode ($token)
+    {
+        return view('auth.activation_code');
+    }
 }
