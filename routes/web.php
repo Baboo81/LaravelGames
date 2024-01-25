@@ -58,5 +58,5 @@ Route::post('/exist_email', [LoginController::class, 'existEmail'])
 Route::match(['get', 'post'], '/activation_code/{token}', [LoginController::class, 'activationCode'])
     ->name('app_activation_code');
 
-Route::get('/user_checker', [LoginController::class, 'user_checker'])
+Route::get('/user_checker', [LoginController::class, 'userChecker'])
     ->name('app_userchecker');

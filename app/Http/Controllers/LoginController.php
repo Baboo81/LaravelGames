@@ -48,10 +48,12 @@ class LoginController extends Controller
         $activation_token = Auth::user()->activation_token;
         $is_verified = Auth::user()->is_verified;
 
-        if($is_verified != 1)
+        if($is_verified != 1)//Si le compte n'est pas encore vérifié:
         {
+            Auth::logout();//Déconnecte l'utilisateur
+
             return redirect()->route('app_activation_code', ['token' => $activation_token])
-                            ->with('warning', 'Your account is not activate yet, please check your mailbox and actiavte your account or resend the confirmation message !');
+                            ->with('warning', 'Your account is not activated yet, please check your mailbox and actiavte your account or resend the confirmation message !');
         } else {
             return redirect()->route('app_dashboard');
         }

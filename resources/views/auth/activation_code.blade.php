@@ -7,6 +7,13 @@
         <div class="row">
             <div class="col-md-4">
                 <h1 class="text-center py-5">Account Activation</h1>
+
+                @if (Session::has('warning'))
+                    <div class="alert alert-warning text-center" role="alert">
+                        {{  Session::get('warning') }}
+                    </div>
+                @endif
+
                 <form class="border rounded-4" method="POST" action="{{ route('app_activation_code', ['token' => $token]) }}">
                     @csrf
 
