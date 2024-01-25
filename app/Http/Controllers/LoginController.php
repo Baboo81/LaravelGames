@@ -59,6 +59,8 @@ class LoginController extends Controller
 
     public function activationCode ($token)
     {
-        return view('auth.activation_code');
+        return view('auth.activation_code', [
+            'token' => $token,
+        ]);
     }
 }
