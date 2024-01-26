@@ -61,6 +61,14 @@ class LoginController extends Controller
 
     public function activationCode ($token)
     {
+        if ($this->request->isMethod('post'))
+        {
+            $activationCode = $this->request->input('activation_code');
+
+            //Récuperation du code saisi par le user afin de le comparer avec celui de la DB:
+
+        }
+
         return view('auth.activation_code', [
             'token' => $token,
         ]);
