@@ -210,4 +210,11 @@ canvas
 }
 /*Flying Ducky END*/
 
+/*Footer*/
+footer
+{
+    height: 350px;
+    background-color: var(--grey);
+}
+
 

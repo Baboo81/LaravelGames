@@ -21,6 +21,9 @@
         {{--Les contenus seront affichés ici, les autres pages du site hériterons de cette page --}}
         @yield('content')
 
+        {{--Footer--}}
+        @include('footer/footer')
+
         {{--Scripts JS--}}
         @include('script')
     </body>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
@@ -63,10 +64,28 @@ class LoginController extends Controller
     {
         if ($this->request->isMethod('post'))
         {
+            //Récuperation du code saisi par le user afin de le comparer avec celui de la DB:
+            $user = User::where('activation_token', $token)->first();
+            $code = $user->activation_code;
             $activationCode = $this->request->input('activation_code');
 
-            //Récuperation du code saisi par le user afin de le comparer avec celui de la DB:
 
+           if ($activationCode != $code)
+           {
+                return back()->with('danger', 'This activation code is invalid !');
+           } else {
+                DB::table('users')
+                 ->where('id', $user->id)
+                 ->update([
+                    'is_verified' => 1,
+                    'activation_code' => '',
+                    'activation_token' => '',
+                    'email_verified_at' => new \DateTimeImmutable,
+                    'updated_at' => new \DateTimeImmutable,
+                 ]);
+
+                 return redirect()->route('login')->with('succes', 'Your email address has been verifed !');
+           }
         }
 
         return view('auth.activation_code', [

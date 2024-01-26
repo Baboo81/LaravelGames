@@ -12,17 +12,23 @@
                 <form method="POST" action="{{ route('login') }}" class="border rounded-4">
                     @csrf<!--Définir ce token afin de sécuriser le form-->
 
+                    @if (Session::has('succes'))
+                        <div class="alert alert-succes text-center" role="alert">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+
                     <!--Msg si erreur pour l'email-->
                     @error('email')
                         <div class="alert alert-danger text-center" role="alert">
-                            {{ $emailError }}
+                            {{ $message }}
                         </div>
                     @enderror
 
                     <!--Msg si erreur pour le mot de passe-->
                     @error('password')
                         <div class="alert alert-danger text-center" role="alert">
-                            {{ $passwordError }}
+                            {{ $message }}
                         </div>
                     @enderror
 
