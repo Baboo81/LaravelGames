@@ -214,7 +214,7 @@ canvas
 footer
 {
     height: 350px;
-    background-color: var(--grey);
+    background: url(../img/footer.jpg) center center no-repeat;
 }
 
 
