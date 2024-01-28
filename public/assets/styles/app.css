@@ -4,6 +4,7 @@
 :root
 {
     --violet : #686bae;
+    --mauve : #810CA8;
     --yellow : #f1eda3;
     --pink : #e5d2e0;
     --blueOcean : #8ef5ec;
@@ -15,7 +16,7 @@
 
 body
 {
-    background-color: var(--noir);
+    background-color: var(--mauve);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -62,7 +63,7 @@ span
 nav
 {
     height: 15em;
-    background: url(../img/banner.jpg)center no-repeat;
+    background: url(../img/banner.svg)center center no-repeat;
     background-size: cover;
 }
 
@@ -216,6 +217,7 @@ footer
 {
     height: 350px;
     background: url(../img/footer.svg) center center no-repeat;
+    background-size: cover;
 }
 
 
