@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Services\EmailService;
+
 
 class LoginController extends Controller
 {
@@ -62,10 +64,16 @@ class LoginController extends Controller
 
     public function activationCode ($token)
     {
+        $user = User::where('activation_token', $token)->first();
+
+        if(!$user)
+        {
+            return redirect()->route('login')->with('danger', 'This token doesn\'t match any user !');
+        }
+
         if ($this->request->isMethod('post'))
         {
             //Récuperation du code saisi par le user afin de le comparer avec celui de la DB:
-            $user = User::where('activation_token', $token)->first();
             $code = $user->activation_code;
             $activationCode = $this->request->input('activation_code');
 
@@ -100,5 +108,44 @@ class LoginController extends Controller
         $name = $user->name;
         $activation_token = $user->activation_token;
         $activation_code = $user->activation_code;
+
+        $emailSend = new EmailService;
+        $subject = "Acivate your account";
+        $message = view('mail.confirmation_email')
+                    ->with([
+                        'name' => $name,
+                        'activation_code' => $activation_code,
+                        'activation_token' => $activation_token,
+                    ]);
+
+        $emailSend->sendEmail($subject, $email, $name, true, $message);
+
+        return redirect()->route('app_activation_code', ['token' => $token])
+                         ->with('success', 'You have just resend the new activation code');
+    }
+
+    public function activationAccountLink ($token)
+    {
+        //Récupération du token:
+        $user = User::where('activation_token', $token)->first();
+
+        if(!$user)
+        {
+            return redirect()->route('login')->with('danger', 'This token doesn\'t match any user !');
+        }
+
+        DB::table('users')
+                 ->where('id', $user->id)
+                 ->update([
+                    'is_verified' => 1,
+                    'activation_code' => '',
+                    'activation_token' => '',
+                    'email_verified_at' => new \DateTimeImmutable,
+                    'updated_at' => new \DateTimeImmutable,
+                 ]);
+
+                 return redirect()->route('login')->with('succes', 'Your email address has been verifed !');
+
+
     }
 }

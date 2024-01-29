@@ -64,3 +64,7 @@ Route::get('/user_checker', [LoginController::class, 'userChecker'])
 //Création de la route pour le renvoi d'un mail si le premier n'est pas arrivé:
 Route::get('/resend_activation_code/{token}', [LoginController::class, 'resendActivationCode'])
     ->name('app_resend_activation_code');
+
+//Création de la route de confirmation d'email:
+Route::get('/activation_account_link/{token}', [LoginController::class, 'activationAccountLink'])
+    ->name('app_activation_account_link');

@@ -13,7 +13,7 @@
                     @csrf<!--Définir ce token afin de sécuriser le form-->
 
                     {{--Inclusion des msg d'alertes--}}
-                    @include('alerts.alert-message');
+                    @include('alerts.alert-message')
 
                     <!--Msg si erreur pour l'email-->
                     @error('email')

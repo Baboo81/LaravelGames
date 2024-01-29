@@ -7,11 +7,12 @@
         <div class="row">
             <div class="col-md-4">
                 <h1 class="text-center py-5">Account Activation</h1>
-               {{--Inclusion des msg d'alertes--}}
-               @include('alerts.alert-message');
 
                 <form class="border rounded-4" method="POST" action="{{ route('app_activation_code', ['token' => $token]) }}">
                     @csrf
+
+                    {{--Inclusion des msg d'alertes--}}
+                    @include('alerts.alert-message')
 
                     <label for="activation-code" class="py-3">Activation code</label>
                     <input class="form-control @if(Session::has('danger')) is-invalid @endif"
@@ -25,7 +26,7 @@
                             <a href="#">Change your address</em></a>
                         </div>
                         <div class="col-md-6 text-end">
-                            <a href="{{ route('app_resend_activation_code', ['token' =>$token]) }}">Resend the activation code</a>
+                            <a href="{{ route('app_resend_activation_code', ['token' => $token]) }}">Resend the activation code</a>
                         </div>
                     </div>
 
