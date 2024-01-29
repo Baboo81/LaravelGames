@@ -19,11 +19,12 @@
                            type="text"
                            name="activation-code"
                            id="activation-code"
-                           value="@if(Session::has('activation_code')){{ Session::get('activation_code') }}@endif">
+                           value="@if(Session::has('activation_code')){{ Session::get('activation_code') }}@endif"
+                           required>
 
                     <div class="row py-3">
                         <div class="col-md-6">
-                            <a href="#">Change your address</em></a>
+                            <a href=" {{ route('app_activation_account_change_email', ['token' => $token]) }} ">Change your address</em></a>
                         </div>
                         <div class="col-md-6 text-end">
                             <a href="{{ route('app_resend_activation_code', ['token' => $token]) }}">Resend the activation code</a>

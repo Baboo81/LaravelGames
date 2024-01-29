@@ -68,3 +68,7 @@ Route::get('/resend_activation_code/{token}', [LoginController::class, 'resendAc
 //Création de la route de confirmation d'email:
 Route::get('/activation_account_link/{token}', [LoginController::class, 'activationAccountLink'])
     ->name('app_activation_account_link');
+
+//Route qui gère le changement d'adresse mail:
+Route::match(['get', 'post'], '/activation_account_change_email/{token}', [LoginController::class, 'activationAccountChangeEmail'])
+    ->name('app_activation_account_change_email');

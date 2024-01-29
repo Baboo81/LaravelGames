@@ -146,6 +146,54 @@ class LoginController extends Controller
 
                  return redirect()->route('login')->with('succes', 'Your email address has been verifed !');
 
+        }
+
+    public function activationAccountChangeEmail($token)
+    {
+        $user = User::where('activation_token', $token)->first();
+
+        if($this->request->isMethod('post'))
+        {
+            $new_email = $this->request->input('new-email');
+            $user_exist = User::where('email', $new_email)->first();
+
+
+            if($user_exist)
+            {
+                return back()->with([
+                    'danger' => 'This address email is already used ! please enter another email !',
+                    'new_email' => $new_email,
+                ]);
+            } else {
+                DB::table('users')
+                    ->where('id', $user->id)
+                    ->update([
+                        'email' => $new_email
+                    ]);
+
+                    $activation_code = $user->activation_code;
+                    $activation_token = $user->activation_token;
+                    $name = $user->name;
+
+                    $emailSend = new EmailService;
+                    $subject = "Acivate your account";
+                    $message = view('mail.confirmation_email')
+                                ->with([
+                                    'name' => $name,
+                                    'activation_code' => $activation_code,
+                                    'activation_token' => $activation_token,
+                                ]);
+
+                    $emailSend->sendEmail($subject, $new_email, $name, true, $message);
+
+                    return redirect()->route('app_activation_code',['token' =>$token])
+                                     ->with('success', 'You have just resend the new activation code !');
+
+            }
+
+        } else {
+            return view('auth.activation_account_change_email', ['token' => $token]);
+        }
 
     }
 }

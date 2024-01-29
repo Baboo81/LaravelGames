@@ -17,7 +17,7 @@
 
 body
 {
-    background-color: var(--mauve);
+    background-color: var(--noir);
     font-family: 'Ranchers', sans-serif;
 }
 
@@ -70,7 +70,7 @@ nav
 
 .nav-link, .nav-item
 {
-    color: var(--blue);
+    color: var(--mauve);
     font-size: 1.5em;
 }
 
@@ -83,7 +83,7 @@ nav
 {
     font-size: 2em;
     font-weight: bold;
-    color: var(--yellow);
+    color: var(--red);
 }
 
 .navbar-brand:hover
