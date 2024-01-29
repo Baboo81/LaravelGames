@@ -15,8 +15,8 @@
                       Réseaux Sociaux
                   </p>
                   <div class="justify-content-center mx-5">
-                      <a href="https://github.com/Baboo81"><img class="netWorks px-2" src="../assets/img/svg/footer/PictoGit.svg" alt="Logo de GitHub"/></a>
-                      <a href="https://www.linkedin.com/in/chris-rodriguez-perez-609716100/"><img class="netWorks px-2" src="../assets/img/svg/footer/PictoLinkedIn.svg" alt="Logo de LinkedIn"/></a>
+                      <a href="https://github.com/Baboo81"><img class="netWorks px-2" src="" alt="Logo de GitHub"/></a>
+                      <a href="https://www.linkedin.com/in/chris-rodriguez-perez-609716100/"><img class="netWorks px-2" src="" alt="Logo de LinkedIn"/></a>
                   </div>
               </div>
               <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -24,7 +24,7 @@
                       Contact
                   </p>
                   <div class="justify-content-center mx-5 mt-3">
-                      <a href="mailto:chrisrodriguez@hotmail.be"><img class="netWorks px-2" src="../assets/img/svg/footer/PictoMail.svg" alt="Logo mail"/></a>
+                      <a href="mailto:chrisrodriguez@hotmail.be"><img class="netWorks px-2" src="" alt="Logo mail"/></a>
                   </div>
               </div>
           </div>

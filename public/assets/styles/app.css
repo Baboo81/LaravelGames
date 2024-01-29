@@ -10,6 +10,7 @@
     --blueOcean : #8ef5ec;
     --blue : #05a9c7;
     --grey : #647295;
+    --darckBlue : #262A56;
     --noir : #000;
     --red : #CD1818;
 }
@@ -63,7 +64,7 @@ span
 nav
 {
     height: 15em;
-    background: url(../img/banner.svg)center center no-repeat;
+    background: var(--darckBlue);
     background-size: cover;
 }
 

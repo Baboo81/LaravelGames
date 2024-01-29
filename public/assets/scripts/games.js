@@ -98,10 +98,10 @@ let game = setInterval(draw, 100);
 
 //Flying Ducky:
 let moveSpeed = 3, grativy = 0.5;
-let duck = document.querySelector('duck');
+let duck = document.querySelector('bird');
 //let img = document.getElementById('bird-1');
 
-let bird_props = bird.getBoundingClientRect();
+let bird_props = duck.getBoundingClientRect();
 
 let background = document.querySelector('.background').getBoundingClientRect();
 let score_Values = document.querySelector('.scoreValue');
