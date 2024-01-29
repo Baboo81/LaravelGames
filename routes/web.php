@@ -60,3 +60,7 @@ Route::match(['get', 'post'], '/activation_code/{token}', [LoginController::clas
 
 Route::get('/user_checker', [LoginController::class, 'userChecker'])
     ->name('app_userchecker');
+
+//Création de la route pour le renvoi d'un mail si le premier n'est pas arrivé:
+Route::get('/resend_activation_code/{token}', [LoginController::class, 'resendActivationCode'])
+    ->name('app_resend_activation_code');

@@ -92,4 +92,13 @@ class LoginController extends Controller
             'token' => $token,
         ]);
     }
+
+    public function resendActivationCode ($token)
+    {
+        $user = User::where('activation_token', $token)->first();
+        $email = $user->email;
+        $name = $user->name;
+        $activation_token = $user->activation_token;
+        $activation_code = $user->activation_code;
+    }
 }

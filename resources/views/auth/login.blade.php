@@ -9,14 +9,11 @@
                 <h1 class="text-center py-5">Please sign in</h1>
                 <p class="text-center py-3">Your articles are waiting for you</p>
 
-                <form method="POST" action="{{ route('login') }}" class="border rounded-4">
+                <form method="POST" action="{{ route('login') }}" class="border rounded-4 py-5">
                     @csrf<!--Définir ce token afin de sécuriser le form-->
 
-                    @if (Session::has('succes'))
-                        <div class="alert alert-succes text-center" role="alert">
-                            {{ Session::get('success') }}
-                        </div>
-                    @endif
+                    {{--Inclusion des msg d'alertes--}}
+                    @include('alerts.alert-message');
 
                     <!--Msg si erreur pour l'email-->
                     @error('email')
@@ -73,6 +70,8 @@
                         <p class="text-center">No registered yet ? <a href="{{ route('register') }}">Create an account</a></p>
                     </div>
                 </form>
+                <br/>
+                <br/>
             </div>
         </div>
     </div>

@@ -14,17 +14,16 @@
         <link rel="stylesheet" href="{{ asset('assets/styles/user.css') }}">
     </head>
 
-    <body>
+    <body class="">
         {{--NavBar--}}
         @include('navBar/navBar')
 
         {{--Les contenus seront affichés ici, les autres pages du site hériterons de cette page --}}
         @yield('content')
 
-        {{--Footer--}}
-        @include('footer/footer')
-
         {{--Scripts JS--}}
         @include('script')
     </body>
+        {{--Footer--}}
+        @include('footer/footer')
 </html>
