@@ -111,14 +111,9 @@ class LoginController extends Controller
 
         $emailSend = new EmailService;
         $subject = "Acivate your account";
-        $message = view('mail.confirmation_email')
-                    ->with([
-                        'name' => $name,
-                        'activation_code' => $activation_code,
-                        'activation_token' => $activation_token,
-                    ]);
 
-        $emailSend->sendEmail($subject, $email, $name, true, $message);
+
+        $emailSend->sendEmail($subject, $email, $name, true, $activation_code, $activation_token);
 
         return redirect()->route('app_activation_code', ['token' => $token])
                          ->with('success', 'You have just resend the new activation code');
@@ -177,14 +172,9 @@ class LoginController extends Controller
 
                     $emailSend = new EmailService;
                     $subject = "Acivate your account";
-                    $message = view('mail.confirmation_email')
-                                ->with([
-                                    'name' => $name,
-                                    'activation_code' => $activation_code,
-                                    'activation_token' => $activation_token,
-                                ]);
 
-                    $emailSend->sendEmail($subject, $new_email, $name, true, $message);
+
+                    $emailSend->sendEmail($subject, $new_email, $name, true, $activation_code, $activation_token);
 
                     return redirect()->route('app_activation_code',['token' =>$token])
                                      ->with('success', 'You have just resend the new activation code !');

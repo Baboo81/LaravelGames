@@ -25,7 +25,7 @@ class EmailService
     }
 
     //Création d'une fct pour l'envoie du mailafin de configurer l'envoi de mail
-    public function sendEmail ($subject, $emailUser, $nameUser, $isHtml, $message)
+    public function sendEmail ($subject, $emailUser, $nameUser, $isHtml, $activation_code, $activation_token)
     {
         $mail = new PHPMailer;
         $mail->isSMTP();
@@ -40,8 +40,18 @@ class EmailService
         $mail->addReplyTo($this->app_name, $this->app_name);
         $mail->addAddress($emailUser, $nameUser);
         $mail->isHTML($isHtml);
-        $mail->Body = $message;
+        $mail->Body =$this->viewSendEmail($nameUser, $activation_code, $activation_token);
         $mail->send();
+    }
+
+    public function viewSendEmail($name, $activation_code, $activation_token)
+    {
+        return view('mail.confirmation_email')
+                ->with([
+                    'name' => $name,
+                    'activation_code' => $activation_code,
+                    'activation_token' => $activation_token,
+                ]);
     }
 }
 
