@@ -24,7 +24,7 @@ class EmailService
         $this->password = config('app.mail_password');
     }
 
-    //Création d'une fct pour l'envoie du mailafin de configurer l'envoi de mail
+    //Création d'une fct pour l'envoie du mail afin de configurer l'envoi de mail
     public function sendEmail ($subject, $emailUser, $nameUser, $isHtml, $activation_code, $activation_token)
     {
         $mail = new PHPMailer;
