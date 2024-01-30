@@ -6,13 +6,12 @@
     --violet : #686bae;
     --mauve : #810CA8;
     --yellow : #f1eda3;
-    --pink : #e5d2e0;
+    --pink : #fcc9e8;
     --blueOcean : #8ef5ec;
     --blue : #05a9c7;
     --grey : #647295;
     --darckBlue : #262A56;
     --noir : #000;
-    --red : #CD1818;
 }
 
 body
@@ -34,7 +33,7 @@ h1
 
 p
 {
-    color: var(--yellow);
+    color: var(--pink);
     font-size: 1.5em;
 }
 
@@ -89,7 +88,7 @@ nav
 {
     font-size: 2em;
     font-weight: bold;
-    color: var(--red);
+    color: var(--pink);
 }
 
 .navbar-brand:hover
@@ -119,11 +118,19 @@ nav
     height: 1800px;
 }
 
+.snakeBg
+{
+    background: url(../img/backGroundSnake.jpg) center center no-repeat;
+    background-size: cover;
+    height: 1600px;
+}
+
 /*Snake*/
 canvas
 {
-   background: url(../img/backGroundSnake.svg);
-   margin-left: 60%;
+   background: var(--blue);
+   border: solid 6px var(--violet);
+   margin-left: 34%;
 }
 
 .snake
