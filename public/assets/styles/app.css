@@ -21,14 +21,15 @@ body
     font-family: 'Ranchers', sans-serif;
 }
 
-.homeTitle
+.mainTitle
 {
     font-size: 8em;
+    color: var(--yellow);
 }
 
 h1
 {
-    color: var(--mauve);
+    color: var(--blue);
 }
 
 p
@@ -75,7 +76,7 @@ nav
 
 .nav-link, .nav-item
 {
-    color: var(--mauve);
+    color: var(--yellow);
     font-size: 1.5em;
 }
 
@@ -95,11 +96,25 @@ nav
 {
     color: lightsalmon;
 }
+
+.logo
+{
+    height: 25em;
+    width: 25em;
+    z-index: 30;
+}
 /*END Nav*/
 
 .home
 {
     background: url(../img/backGroundHome.jpg) center center no-repeat;
+    background-size: cover;
+    height: 1800px;
+}
+
+.about
+{
+    background: url(../img/backGroundAbout.png) center center no-repeat;
     background-size: cover;
     height: 1800px;
 }
