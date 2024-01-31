@@ -3,6 +3,7 @@
 
 :root
 {
+    --green : #87db8b;
     --violet : #686bae;
     --mauve : #810CA8;
     --yellow : #f1eda3;
@@ -69,7 +70,7 @@ span
 nav
 {
     height: 15em;
-    background: var(--darckBlue);
+    background: var(--green);
     background-size: cover;
 }
 
@@ -120,7 +121,7 @@ nav
 
 .snakeBg
 {
-    background: url(../img/backGroundSnake.jpg) center center no-repeat;
+    background: url(../img/backGroundSanky.jpg) center center no-repeat;
     background-size: cover;
     height: 1600px;
 }
@@ -128,9 +129,10 @@ nav
 /*Snake*/
 canvas
 {
-   background: url(../img/backGroundSnake.jpg);
-   border: solid 6px var(--violet);
-   margin-left: 34%;
+   background-color: var(--noir);
+   opacity: 70%;
+   border: solid 6px var(--green);
+   margin-left: 20%;
 }
 
 .snake

@@ -36,7 +36,7 @@ function direction(event) {
 }
 
 function draw() {
-    contexte.clearRect(0, 0, 400, 400)
+    contexte.clearRect(0, 0, 800, 800)
 
     for(let i = 0; i < snake.length; i++){
         contexte.fillStyle = (i == 0) ? "#686bae" : "white";
@@ -72,7 +72,7 @@ let newHead = {
     y: snakeY
 }
 
-if(snakeX < 0 || snakeY < 0 || snakeX > 19*box || snakeY > 19*box || collision(newHead, snake)) {
+if(snakeX < 0 || snakeY < 0 || snakeX > 39*box || snakeY > 39*box || collision(newHead, snake)) {
     clearInterval(game);
     alert("Vous avez perdu !");
 }
