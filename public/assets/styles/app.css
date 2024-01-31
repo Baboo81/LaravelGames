@@ -128,14 +128,14 @@ nav
 /*Snake*/
 canvas
 {
-   background: var(--blue);
+   background: url(../img/backGroundSnake.jpg);
    border: solid 6px var(--violet);
    margin-left: 34%;
 }
 
 .snake
 {
-    background: url(../img/snake.svg);
+    background: url(../img/backGroundPageSnake.jpg);
 }
 
 /*Snake END*/
