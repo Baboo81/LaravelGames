@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
 
             <a class="navbar-brand" href="#">{{ config('app.name') }}</a>
