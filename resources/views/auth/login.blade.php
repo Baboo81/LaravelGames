@@ -5,11 +5,9 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <h1 class="text-center py-5">Please sign in</h1>
             <div class="col-md-4 mx-auto">
-                <h1 class="text-center py-5">Please sign in</h1>
-                <p class="text-center py-3">Your articles are waiting for you</p>
-
-                <form method="POST" action="{{ route('login') }}" class="border rounded-4 py-5">
+                <form method="POST" action="{{ route('login') }}" class="border-perso rounded-4 py-5">
                     @csrf<!--Définir ce token afin de sécuriser le form-->
 
                     {{--Inclusion des msg d'alertes--}}

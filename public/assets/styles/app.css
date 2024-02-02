@@ -29,12 +29,14 @@ body
 
 h1
 {
+    position: relative;
+    top: 20%;
     color: var(--blue);
 }
 
 p
 {
-    color: var(--pink);
+    color: var(--violet);
     font-size: 1.5em;
 }
 
@@ -90,7 +92,7 @@ nav
 {
     font-size: 2em;
     font-weight: bold;
-    color: var(--pink);
+    color: var(--violet);
 }
 
 .navbar-brand:hover
@@ -105,6 +107,12 @@ nav
     z-index: 30;
 }
 /*END Nav*/
+
+.border-perso
+{
+    border: solid 1px var(--violet);
+    padding: 3%;
+}
 
 .home
 {
